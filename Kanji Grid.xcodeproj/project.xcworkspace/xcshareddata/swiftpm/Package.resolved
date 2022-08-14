@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftytranslate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cpageler93/SwiftyTranslate",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5a5d84d8d0cab536563a274c3b37a7099237777e"
+      }
+    }
+  ],
+  "version" : 2
+}
