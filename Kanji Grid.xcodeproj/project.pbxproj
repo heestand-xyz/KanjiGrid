@@ -16,6 +16,9 @@
 		D363493328A96AB70076345A /* KaniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493228A96AB70076345A /* KaniView.swift */; };
 		D363493528A96B150076345A /* KanjiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493428A96B150076345A /* KanjiViewModel.swift */; };
 		D363493828A96BF70076345A /* SwiftyTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = D363493728A96BF70076345A /* SwiftyTranslate */; };
+		D363493A28A96FC10076345A /* 1-to-N.txt in Resources */ = {isa = PBXBuildFile; fileRef = D363493928A96FC10076345A /* 1-to-N.txt */; };
+		D363493C28A970410076345A /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493B28A970410076345A /* Kanji.swift */; };
+		D363493E28A973B90076345A /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493D28A973B90076345A /* ParticleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		D363493028A968870076345A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D363493228A96AB70076345A /* KaniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaniView.swift; sourceTree = "<group>"; };
 		D363493428A96B150076345A /* KanjiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiViewModel.swift; sourceTree = "<group>"; };
+		D363493928A96FC10076345A /* 1-to-N.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "1-to-N.txt"; sourceTree = "<group>"; };
+		D363493B28A970410076345A /* Kanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji.swift; sourceTree = "<group>"; };
+		D363493D28A973B90076345A /* ParticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +71,12 @@
 				D363491F28A9685F0076345A /* KanjiGridApp.swift */,
 				D363493028A968870076345A /* MainViewModel.swift */,
 				D363492128A9685F0076345A /* ContentView.swift */,
+				D363493B28A970410076345A /* Kanji.swift */,
 				D363493428A96B150076345A /* KanjiViewModel.swift */,
 				D363493228A96AB70076345A /* KaniView.swift */,
+				D363493D28A973B90076345A /* ParticleView.swift */,
 				D363492E28A968790076345A /* aozora.txt */,
+				D363493928A96FC10076345A /* 1-to-N.txt */,
 				D363492328A968600076345A /* Assets.xcassets */,
 				D363492528A968600076345A /* Kanji_Grid.entitlements */,
 				D363492628A968600076345A /* Preview Content */,
@@ -147,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D363493A28A96FC10076345A /* 1-to-N.txt in Resources */,
 				D363492828A968600076345A /* Preview Assets.xcassets in Resources */,
 				D363492428A968600076345A /* Assets.xcassets in Resources */,
 				D363492F28A968790076345A /* aozora.txt in Resources */,
@@ -165,6 +175,8 @@
 				D363492028A9685F0076345A /* KanjiGridApp.swift in Sources */,
 				D363493328A96AB70076345A /* KaniView.swift in Sources */,
 				D363493528A96B150076345A /* KanjiViewModel.swift in Sources */,
+				D363493C28A970410076345A /* Kanji.swift in Sources */,
+				D363493E28A973B90076345A /* ParticleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

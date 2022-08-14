@@ -19,17 +19,18 @@ struct ContentView: View {
                 
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
                     
-                    ForEach(main.kanjis, id: \.self) { kanji in
+                    ForEach(main.kanjis) { kanji in
                         
                         NavigationLink {
-                            KaniView(kanji: kanji)
+                            KaniView(main: main, kanji: kanji)
                         } label: {
-                            Text(kanji)
+                            Text(kanji.character)
+                                .font(.system(size: 30, weight: .semibold))
                                 .foregroundColor(.white)
                                 .padding()
                                 .background {
                                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                        .foregroundColor(.accentColor)
+                                        .foregroundColor(main.checked.contains(kanji.character) ? .accentColor : .gray)
                                 }
                         }
                         .buttonStyle(.plain)

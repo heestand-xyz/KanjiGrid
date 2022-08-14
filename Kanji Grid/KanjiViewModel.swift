@@ -11,11 +11,11 @@ import AVFoundation
 
 final class KanjiViewModel: ObservableObject {
 
-    private let kanji: String
+    private let kanji: Kanji
     
     @Published var word: String?
     
-    init(kanji: String) {
+    init(kanji: Kanji) {
         self.kanji = kanji
         translate()
     }
@@ -23,7 +23,7 @@ final class KanjiViewModel: ObservableObject {
     private func translate() {
         
         SwiftyTranslate.translate(
-            text: kanji,
+            text: kanji.character,
             from: "ja",
             to: "en"
         ) { result in
@@ -44,7 +44,7 @@ final class KanjiViewModel: ObservableObject {
     
     func speak() {
         
-        let utterance = AVSpeechUtterance(string: kanji)
+        let utterance = AVSpeechUtterance(string: kanji.character)
         utterance.voice = AVSpeechSynthesisVoice(language: "ja")
         
         let synth = AVSpeechSynthesizer()
