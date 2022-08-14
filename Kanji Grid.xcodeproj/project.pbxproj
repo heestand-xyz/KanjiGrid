@@ -7,19 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D363492028A9685F0076345A /* Kanji_GridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363491F28A9685F0076345A /* Kanji_GridApp.swift */; };
+		D363492028A9685F0076345A /* KanjiGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363491F28A9685F0076345A /* KanjiGridApp.swift */; };
 		D363492228A9685F0076345A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363492128A9685F0076345A /* ContentView.swift */; };
 		D363492428A968600076345A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D363492328A968600076345A /* Assets.xcassets */; };
 		D363492828A968600076345A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D363492728A968600076345A /* Preview Assets.xcassets */; };
+		D363492F28A968790076345A /* aozora.txt in Resources */ = {isa = PBXBuildFile; fileRef = D363492E28A968790076345A /* aozora.txt */; };
+		D363493128A968870076345A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493028A968870076345A /* MainViewModel.swift */; };
+		D363493328A96AB70076345A /* KaniView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493228A96AB70076345A /* KaniView.swift */; };
+		D363493528A96B150076345A /* KanjiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D363493428A96B150076345A /* KanjiViewModel.swift */; };
+		D363493828A96BF70076345A /* SwiftyTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = D363493728A96BF70076345A /* SwiftyTranslate */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D363491C28A9685F0076345A /* Kanji Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kanji Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D363491F28A9685F0076345A /* Kanji_GridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kanji_GridApp.swift; sourceTree = "<group>"; };
+		D363491F28A9685F0076345A /* KanjiGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiGridApp.swift; sourceTree = "<group>"; };
 		D363492128A9685F0076345A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D363492328A968600076345A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D363492528A968600076345A /* Kanji_Grid.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kanji_Grid.entitlements; sourceTree = "<group>"; };
 		D363492728A968600076345A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D363492E28A968790076345A /* aozora.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aozora.txt; sourceTree = "<group>"; };
+		D363493028A968870076345A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		D363493228A96AB70076345A /* KaniView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaniView.swift; sourceTree = "<group>"; };
+		D363493428A96B150076345A /* KanjiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D363493828A96BF70076345A /* SwiftyTranslate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +62,12 @@
 		D363491E28A9685F0076345A /* Kanji Grid */ = {
 			isa = PBXGroup;
 			children = (
-				D363491F28A9685F0076345A /* Kanji_GridApp.swift */,
+				D363491F28A9685F0076345A /* KanjiGridApp.swift */,
+				D363493028A968870076345A /* MainViewModel.swift */,
 				D363492128A9685F0076345A /* ContentView.swift */,
+				D363493428A96B150076345A /* KanjiViewModel.swift */,
+				D363493228A96AB70076345A /* KaniView.swift */,
+				D363492E28A968790076345A /* aozora.txt */,
 				D363492328A968600076345A /* Assets.xcassets */,
 				D363492528A968600076345A /* Kanji_Grid.entitlements */,
 				D363492628A968600076345A /* Preview Content */,
@@ -85,6 +99,9 @@
 			dependencies = (
 			);
 			name = "Kanji Grid";
+			packageProductDependencies = (
+				D363493728A96BF70076345A /* SwiftyTranslate */,
+			);
 			productName = "Kanji Grid";
 			productReference = D363491C28A9685F0076345A /* Kanji Grid.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +130,9 @@
 				Base,
 			);
 			mainGroup = D363491328A9685F0076345A;
+			packageReferences = (
+				D363493628A96BF70076345A /* XCRemoteSwiftPackageReference "SwiftyTranslate" */,
+			);
 			productRefGroup = D363491D28A9685F0076345A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,6 +149,7 @@
 			files = (
 				D363492828A968600076345A /* Preview Assets.xcassets in Resources */,
 				D363492428A968600076345A /* Assets.xcassets in Resources */,
+				D363492F28A968790076345A /* aozora.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D363493128A968870076345A /* MainViewModel.swift in Sources */,
 				D363492228A9685F0076345A /* ContentView.swift in Sources */,
-				D363492028A9685F0076345A /* Kanji_GridApp.swift in Sources */,
+				D363492028A9685F0076345A /* KanjiGridApp.swift in Sources */,
+				D363493328A96AB70076345A /* KaniView.swift in Sources */,
+				D363493528A96B150076345A /* KanjiViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D363493628A96BF70076345A /* XCRemoteSwiftPackageReference "SwiftyTranslate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cpageler93/SwiftyTranslate";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D363493728A96BF70076345A /* SwiftyTranslate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D363493628A96BF70076345A /* XCRemoteSwiftPackageReference "SwiftyTranslate" */;
+			productName = SwiftyTranslate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D363491428A9685F0076345A /* Project object */;
 }

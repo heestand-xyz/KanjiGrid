@@ -8,10 +8,15 @@
 import SwiftUI
 
 @main
-struct Kanji_GridApp: App {
+struct KanjiGridApp: App {
+    
+    @StateObject var main = MainViewModel()
+    
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            
+            ContentView(main: main)
         }
     }
 }
