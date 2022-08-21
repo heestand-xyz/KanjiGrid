@@ -45,6 +45,14 @@ final class MainViewModel: ObservableObject {
             let kanji = Kanji(character: character, particles: particles)
             kanjis.append(kanji)
         }
+        for kanji in kanjis {
+            for otherKanji in kanjis {
+                guard kanji.character != otherKanji.character else { continue }
+                if otherKanji.particles.contains(where: { $0.character == kanji.character }) {
+                    kanji.components.append(otherKanji)
+                }
+            }
+        }
         return kanjis
     }()
     

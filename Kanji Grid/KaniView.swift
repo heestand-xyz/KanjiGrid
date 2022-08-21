@@ -38,6 +38,7 @@ struct KaniView: View {
             
             Text(kanji.character)
                 .font(.largeTitle)
+                .textSelection(.enabled)
             
             if let word = viewModel.word {
                 Text(word)
@@ -65,6 +66,32 @@ struct KaniView: View {
                             .frame(height: 20)
                     }
                 }
+            }
+            
+            Divider()
+                .frame(width: 100)
+            
+            ScrollView(.horizontal) {
+                
+                HStack {
+                    
+                    ForEach(kanji.components) { component in
+                        
+                        NavigationLink {
+                            KaniView(main: main, kanji: component)
+                        } label: {
+                            ParticleView(kanji: component)
+                                .foregroundColor(.purple)
+                        }
+                        .buttonStyle(.plain)
+                        
+                        if component.character != kanji.components.last?.character {
+                            Divider()
+                                .frame(height: 20)
+                        }
+                    }
+                }
+                .padding(.horizontal)
             }
         }
         .toolbar {

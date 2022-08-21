@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @ObservedObject var main: MainViewModel
     
+    @State private var search: String = ""
+    
     var body: some View {
         
         NavigationView {
@@ -19,7 +21,9 @@ struct ContentView: View {
                 
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
                     
-                    ForEach(main.kanjis) { kanji in
+                    ForEach(main.kanjis.filter({ kanji in
+                        search == "" ? true : search.contains(kanji.character)
+                    })) { kanji in
                         
                         NavigationLink {
                             KaniView(main: main, kanji: kanji)
@@ -38,6 +42,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
+            .searchable(text: $search)
             .navigationTitle("Kanji Grid")
         }
     }
