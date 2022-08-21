@@ -21,6 +21,10 @@ struct KaniView: View {
         _viewModel = StateObject(wrappedValue: KanjiViewModel(kanji: kanji))
     }
     
+    private var starred: Bool {
+        main.starred.contains(kanji.character)
+    }
+    
     var body: some View {
         
         VStack(spacing: 20) {
@@ -60,6 +64,21 @@ struct KaniView: View {
                         Divider()
                             .frame(height: 20)
                     }
+                }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    if starred {
+                        main.starred.remove(kanji.character)
+                    } else {
+                        main.starred.insert(kanji.character)
+                    }
+                } label: {
+                    Image(systemName: "star")
+                        .symbolVariant(starred ? .fill : .none)
+                        .foregroundColor(starred ? .yellow : .primary)
                 }
             }
         }

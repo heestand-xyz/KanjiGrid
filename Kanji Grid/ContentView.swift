@@ -30,7 +30,7 @@ struct ContentView: View {
                                 .padding()
                                 .background {
                                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                        .foregroundColor(main.checked.contains(kanji.character) ? .accentColor : .gray)
+                                        .foregroundColor(main.starred.contains(kanji.character) ? .yellow : main.checked.contains(kanji.character) ? .accentColor : .gray)
                                 }
                         }
                         .buttonStyle(.plain)

@@ -59,4 +59,16 @@ final class MainViewModel: ObservableObject {
             UserDefaults.standard.set(json, forKey: "kanji")
         }
     }
+    
+    @Published var starred: Set<String> = {
+        guard let json = UserDefaults.standard.string(forKey: "kanji-starred") else { return [] }
+        guard let data = json.data(using: .utf8) else { return [] }
+        return (try? JSONDecoder().decode(Set<String>.self, from: data)) ?? []
+    }() {
+        didSet {
+            guard let data = try? JSONEncoder().encode(starred) else { return }
+            let json = String(data: data, encoding: .utf8)
+            UserDefaults.standard.set(json, forKey: "kanji-starred")
+        }
+    }
 }
