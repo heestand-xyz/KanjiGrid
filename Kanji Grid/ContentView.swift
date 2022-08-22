@@ -34,7 +34,7 @@ struct ContentView: View {
                                 .padding()
                                 .background {
                                     RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                        .foregroundColor(main.starred.contains(kanji.character) ? .yellow : main.checked.contains(kanji.character) ? .accentColor : .gray)
+                                        .foregroundColor(starred(kanji: kanji) ? .yellow : checked(kanji: kanji) ? .accentColor : .gray)
                                 }
                         }
                         .buttonStyle(.plain)
@@ -45,6 +45,14 @@ struct ContentView: View {
             .searchable(text: $search)
             .navigationTitle("Kanji Grid")
         }
+    }
+    
+    func starred(kanji: Kanji) -> Bool {
+        main.starred.contains(kanji.character)
+    }
+    
+    func checked(kanji: Kanji) -> Bool {
+        main.checked.contains(kanji.character)
     }
 }
 

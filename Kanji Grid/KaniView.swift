@@ -40,8 +40,12 @@ struct KaniView: View {
                 .font(.largeTitle)
                 .textSelection(.enabled)
             
+            Text(viewModel.hiragana)
+                .textSelection(.enabled)
+            
             if let word = viewModel.word {
                 Text(word)
+                    .textSelection(.enabled)
             } else {
                 ProgressView()
             }

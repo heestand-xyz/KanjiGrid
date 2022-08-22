@@ -15,9 +15,12 @@ final class KanjiViewModel: ObservableObject {
     
     @Published var word: String?
     
+    var hiragana: String!
+    
     init(kanji: Kanji) {
         self.kanji = kanji
         translate()
+        hiraganize()
     }
     
     private func translate() {
@@ -42,6 +45,19 @@ final class KanjiViewModel: ObservableObject {
         }
     }
     
+    enum Kana { case hiragana, katakana }
+    
+    private func hiraganize() {
+    
+        let tokenizer: CFStringTokenizer =
+        CFStringTokenizerCreate(kCFAllocatorDefault,
+                                kanji.character as CFString,
+                                CFRangeMake(0, kanji.character.utf16.count),
+                                kCFStringTokenizerUnitWordBoundary,
+                                Locale(identifier: "ja") as CFLocale)
+        hiragana = tokenizer.hiragana
+    }
+    
     func speak() {
         
         let utterance = AVSpeechUtterance(string: kanji.character)
@@ -51,3 +67,27 @@ final class KanjiViewModel: ObservableObject {
         synth.speak(utterance)
     }
 }
+
+private extension CFStringTokenizer {
+    var hiragana: String { string(to: kCFStringTransformLatinHiragana) }
+    var katakana: String { string(to: kCFStringTransformLatinKatakana) }
+    
+    private func string(to transform: CFString) -> String {
+        var output: String = ""
+        while !CFStringTokenizerAdvanceToNextToken(self).isEmpty {
+            output.append(letter(to: transform))
+        }
+        return output
+    }
+    
+    private func letter(to transform: CFString) -> String {
+        let mutableString: NSMutableString =
+        CFStringTokenizerCopyCurrentTokenAttribute(self, kCFStringTokenizerAttributeLatinTranscription)
+            .flatMap { $0 as? NSString }
+            .map { $0.mutableCopy() }
+            .flatMap { $0 as? NSMutableString } ?? NSMutableString()
+        CFStringTransform(mutableString, nil, transform, false)
+        return mutableString as String
+    }
+}
+
